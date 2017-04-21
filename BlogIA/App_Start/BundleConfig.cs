@@ -21,6 +21,8 @@ namespace BlogIA {
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/blog-home.css",
+                      "~/Content/blog-post.css",
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
