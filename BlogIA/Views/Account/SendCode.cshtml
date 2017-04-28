@@ -10,13 +10,13 @@
     @Html.Hidden("rememberMe", @Model.RememberMe)
     <h4>Enviar código de verificación</h4>
     <hr />
-    <div class="row">
-        <div class="col-md-8">
-            Seleccione el proveedor de autenticación en dos fases:
-            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Enviar" class="btn btn-default" />
+        <div class="row">
+            <div class="col-md-8">
+                Seleccione el proveedor de autenticación en dos fases:
+                @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+                <input type="submit" value="Enviar" class="btn btn-default" />
+            </div>
         </div>
-    </div>
 }
 
 @section Scripts {

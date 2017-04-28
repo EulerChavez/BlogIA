@@ -9,7 +9,14 @@ namespace BlogIA.Controllers {
     public class BlogController : Controller {
 
         // GET: Blog
-        public ActionResult Index(int id) {
+        public ActionResult Index() {
+
+            return View();
+
+        }
+
+        // GET: Blog/Blog/1
+        public ActionResult Blog(int id = 0) {
 
             return View();
 

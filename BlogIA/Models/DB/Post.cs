@@ -5,9 +5,9 @@ using System.Web;
 
 namespace BlogIA.Models.DB {
 
-    public class BlogPost {
+    public class Post {
 
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         public string Title { get; set; }
 
@@ -18,6 +18,8 @@ namespace BlogIA.Models.DB {
         public string Review { get; set; }
 
         public string Content { get; set; }
+
+        public virtual IEnumerable<Comment> Commments { get; set; }
 
     }
 

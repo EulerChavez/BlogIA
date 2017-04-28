@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html> 
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - IA en la ESIME</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -21,13 +22,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("IA en la ESIME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("IA en la ESIME", "Index", "Blog", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Blog")</li>
                 </ul>
-                @*@Html.Partial("_LoginPartial")*@
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -38,18 +39,20 @@
         <div class="row">
 
             <!-- Blog Entries Column -->
-            @RenderBody()
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
 
                 <br />
-                
+
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Buscar en el Blog</h4>
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" placeholder="Búsqueda">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
@@ -115,8 +118,8 @@
             </div>
 
         </div>
-        <!-- /.row -->
 
+        <!-- /.row -->
         <hr>
 
         <!-- Footer -->
@@ -134,41 +137,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
 </body>
-
-
-@*<body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-            </footer>
-        </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-    </body>*@
 </html>
